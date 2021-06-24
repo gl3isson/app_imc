@@ -3,9 +3,28 @@
 <head>
     <meta charset="utf-8">
     <title>App IMC</title>
+    <body bgcolor="#87CEFA"></body>
 </head>
 <body>
+    <div>
+        <h1>Cálculo de IMC</h1>
+       <p> 
+        IMC é a sigla para Índice de Massa Corpórea, parâmetro adotado
+        pela Organização Muncial de Saúde (OMS) para calcular o peso ideal
+        de cada pessoa.
+
+        o índice é calculado da seguinte maneira: divise-se o peso do paciente
+        pela sua altura elevada ao quadrado. Diz-se que o indivíduo tem peso normal
+        quando o resultado do imc está  entre 18,5 e 24,9.
+
+        Quer descobrir seu IMC? Insira seu peso e sua altura nos campos abaixo e compare
+        com os índices da tabela. Importante: siga os exemplos e use pontos como separadores.
+        
+        </p>
+
+    </div>
     <script>
+
         function calculaIMC(){
             let massa = document.getElementById("massa").value;  
             let altura = document.getElementById("altura").value;  
@@ -13,19 +32,40 @@
             console.log("Altura: "+altura);  
             let imc = massa/(altura**2)
             document.getElementById("resultado").innerHTML = "Resultado: "+imc 
+        
         }
     </script>
 
     <form>
-        <label for="massa">Massa:</label><br> 
+        <label for="massa">Massa: (ex:.65.4)</label><br> 
         <input type="number" id="massa" name="massa" valeu="0"><br>
-        <label for="altura">Altura:</label><br> 
+        
+        <label for="altura">Altura: (ex: 1.76)
+        </label><br> 
         <input type="number" id="altura" name="altura" valeu="0"><br><br>
+   
     </form>
+   
 
     <button onclick="calculaIMC()"> Calcular IMC </button>
 
     <p id="resultado">Resultado: </p>
+
+    <form>
+        <label><h4>Veja a interpretação do IMC</h4></label><br>
+    </form>
+        
+        <table border=1>
+            <tr><td>IMC</td> <td>Classificação</td><td>Grau de Obesidade</td></tr>
+            <tr><td>Menor de 18,5</td><td>Magreza</td><td>0</td></tr>
+            <tr><td>Entre 18,5 e 24,9</td><td>Normal</td><td>0</td></tr>
+            <tr><td>Entre 25,0 e 29,9</td><td>Sobrepeso</td><td>I</td></tr>
+            <tr><td>Entre 30,0 e 39,9</td><td>Obesidade</td><td>II</td></tr>
+            <tr><td>Maior que 40,0</td><td>Obesidade grave</td><td>III</td></tr>
+        </table>
+        
+    
+
    
 </body>
 </html>
